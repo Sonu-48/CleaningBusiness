@@ -1,0 +1,135 @@
+{
+  "Header": {
+    "title":"Business Cleaning Software For Cleaners",
+    "paragraph": "Streamline your appointment scheduling process with a comprehensive booking software, saving valuable time previously spent on phone and email coordination. Accept online bookings around the clock, automate payments, manage your business, handle marketing tasks, and more!."
+  },
+  "About": {
+    "paragraph": "Introducing Business Cleaning, a software solution tailored for cleaning companies and startups like yours to efficiently manage their operations. Our platform centralizes data, streamlines operations, and elevates overall business management. Let Business Cleaning be the catalyst for optimizing your cleaning company's success!.",
+    "Why": [
+      "quality and productivity ",
+      "clean and healthy environment",
+      "saves  time, money and stress"
+    ],
+    "Why2": [
+      "Aliquip ex ea commodo",
+      "Lorem ipsum dolor",
+      "Exercitation ullamco",
+      "Lorem ipsum dolor"
+    ]
+  },
+  "Gallery": [
+    {
+      "largeImage": "img/Gallary/gallary1.jpg",
+      "smallImage": "img/Gallary/gallary1.jpg"
+    },
+    {
+      "largeImage": "img/Gallary/gallary2.jpg",
+      "smallImage": "img/Gallary/gallary2.jpg"
+    },
+    {
+      "largeImage": "img/Gallary/gallary3.jpg",
+      "smallImage": "img/Gallary/gallary3.jpg"
+    }
+  ],
+  "Services": [
+    {
+      "icon": "fa fa-book",
+      "name": "Online Booking System",
+      "text": "Remove friction from your booking process by minimizing the communication gap with your customers. Your Appointy’s online booking page will allow them to view real-time availability for services so that they can pick a time of their own convenience easily."
+    },
+    {
+      "icon": "fa fa-calendar",
+      "name": "Calendar Scheduler",
+      "text": "View appointments and staff schedules for any day/week/month at a glance. Easily identify gaps in your schedule to fill empty slots by accommodating walk-ins or promoting deals. Sync with your personal and professional calendars like Google Cal, iCal, Outlook & more."
+    },
+    {
+      "icon": "fa fa-bell",
+      "name": "Appointment Alerts",
+      "text": "Receive instant notifications via sms, email, or straight in the app when an appointment is booked, rescheduled, or canceled. Your customers also receive automated appointment alerts so that they stay on top of their bookings without having to dial-in."
+    },
+    {
+      "icon": "fa fa-tasks",
+      "name": "Staff Scheduling & Management",
+      "text": "Assign staff or manager roles to your team members and let them manage their own schedules, leaves, etc. Keep a constant tab on staff productivity, sales, and schedules. Auto-allocate online appointments to staff members based on intelligent algorithms to ensure maximum productivity."
+    },
+    {
+      "icon": "fa fa-ticket",
+      "name": "Multi Channel Bookings",
+      "text": "Accept online reservations from your business’s Google My Business listing using Reserve with Google. Add a 'Book Now' button to your website, Facebook, & Instagram to enable appointment bookings, & prompt visitors to book when they are highly engaged with your brand."
+    },
+    {
+      "icon": "fa fa-mobile",
+      "name": "Appointment Booking App",
+      "text": "With Appointy’s Android & iOS mobile app you can carry your entire business in your pocket. Manage scheduling, payments, staff calendars, appointments, etc. via the app. Add appointments to your calendar even when you’re out for lunch. No laptop? No problem."
+    }
+  ],
+  "Testimonials": [
+    {
+      "img": "img/testimonials/01.jpg",
+      "text": "I recently utilized Business Cleaning for house cleaning services in Mohali, and I must say, I'm thoroughly impressed. The team displayed competence, punctuality, and meticulous attention to detail. Their careful work left my house feeling revitalized and spotless. Thank you!.",
+      "name": "Prince Mehra"
+    },
+    {
+      "img": "img/testimonials/02.jpg",
+      "text": "Business Cleaning Service is undoubtedly the premier home cleaning company in Mohali. Their exceptional service and delightful team members provide mind-blowing experiences. A heartfelt thank you to Business Cleaning Service!",
+      "name": "Dhavan Kumar"
+    },
+    {
+      "img": "img/testimonials/03.jpg",
+      "text": "We are immensely grateful to Business Cleaning for ensuring a seamless shifting process. Our heartfelt thanks for assigning Ritesh Raj to clean our house.",
+      "name": "Shivam Goswami"
+    }
+  ],
+  "Team": [
+    {
+      "img": "img/team/01.jpg",
+      "name": "John Doe",
+      "job": "Director"
+    },
+    {
+      "img": "img/team/02.jpg",
+      "name": "Mike Doe",
+      "job": "Senior Designer"
+    },
+    {
+      "img": "img/team/03.jpg",
+      "name": "Jane Doe",
+      "job": "Senior Designer"
+    },
+    {
+      "img": "img/team/04.jpg",
+      "name": "Karen Doe",
+      "job": "Project Manager"
+    }
+  ],
+  "Contact": {
+    "address": "4321 California St, San Francisco, CA 12345 ",
+    "phone": "+1 123 456 1234",
+    "email": "info@company.com",
+    "facebook": "https://www.facebook.com/",
+    "twitter": "https://twitter.com/",
+    "youtube": "https://www.youtube.com/"
+  },
+  "Features": [
+    {
+      "icon": "fa fa-cogs",
+      "title": "Automated Journaling System",
+      "text": "A fully automated journaling system will free up several hours of administrative work for you each week."
+    },
+    {
+      "icon": "fa fa-clock-o",
+      "title": "Clock in and out with location tracking.",
+      "text": "Easily track your cleaners' work hours and their precise clock-in and clock-out locations."
+    },
+    {
+      "icon": "fa fa-file-text-o",
+      "title": "Automated billing",
+      "text": "Automatically send invoices to your customers, including VAT or factoring in deposits when necessary."
+    },
+    {
+      "icon": "fa fa-envelope",
+      "title": "Highly customizable emails",
+      "text": "Automate your customer communication and reclaim time for more critical tasks."
+    }
+  ]
+}
