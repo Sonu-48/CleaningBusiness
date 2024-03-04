@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { BaseUrl } from "../ApiEndpoint/api";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import { useToasts } from 'react-toast-notifications';
+
 
 const SignupSchema = Yup.object().shape({
   cleaners: Yup.string()
@@ -27,7 +27,7 @@ function CrmForm() {
   //   const [availableCleaners, setAvailableCleaners] = useState([]);
   //   const [error, setError] = useState(false);
   // const [loading, setLoading] = useState(false);
-  const { addToast } = useToasts();
+
   // getbookitem api
   const getbookitem = async () => {
     try {
@@ -48,7 +48,6 @@ function CrmForm() {
 
   //   form handleSubmit function
   const handleSubmit = () => {
-    addToast('Toast message', { appearance: 'success' });
   };
 
   // handlePinCode function
@@ -267,13 +266,13 @@ function CrmForm() {
             </div>
 
             {/* <div mt={5}>
-        {availableCleaners &&
-          availableCleaners.map((availableCleaners) => (
-            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <div
-                className="available-cleaners-outer-wrapper"
-                id={availableCleaners.id}
-              >
+                {availableCleaners &&
+                   availableCleaners.map((availableCleaners) => (
+                  <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <div
+                   className="available-cleaners-outer-wrapper"
+                    id={availableCleaners.id}
+                   >
                 <div align="center">
                   <figure src={availableCleaners.avatar} />
                 </div>

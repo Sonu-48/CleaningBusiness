@@ -144,7 +144,7 @@ hr {
   background-color: #608dfd;
 }
 .section-title {
-  margin-bottom: 70px;
+  margin-bottom: 60px;
 }
 .section-title h2 {
   position: relative;
@@ -212,12 +212,17 @@ a:focus,
   width: 100%;
   padding: 0;
   /* background: url(../img/banner-img.jpg) center center no-repeat; */
-  background: url(../img/banner-cleaning-img-min.jpg) center center no-repeat;
+  /* background: url(../img/banner-cleaning-img-min.jpg) center center no-repeat; */
+  /* background: url(../img/cleaning-banner.jpg) center center no-repeat; */
+  /* background: url(../img/cleaing-back-banner.jpg) center center no-repeat; */
+    /* background: url(../img/banner-background.jpg) center center no-repeat; */
+    background: url(../img/cleaning-banner2.jpg) center center no-repeat;
   background-color: #e5e5e5;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  /* height:100vh; */
 }
 .intro .overlay {
   /* background: rgba(0, 0, 0, 0.2); */
@@ -287,10 +292,10 @@ header .intro-text {
   .container-wrapper{
     width:100%!important;
   }
-  .signup-wrapper{
+  /* .signup-wrapper{
     padding: 140px 0px 100px!important;
     height: auto!important;
-  }
+  } */
   .booking-form-wrapper{
     padding: 140px 0px 100px!important;
     height: auto!important;
@@ -519,6 +524,11 @@ header .intro-text {
   background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
   color: rgba(255, 255, 255, 0.75);
 }
+/* #contact .row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
 #contact .section-title {
   margin-bottom: 40px;
 }
@@ -539,7 +549,7 @@ header .intro-text {
   height: 4px;
   width: 60px;
   bottom: 0;
-  left: 30px;
+  /* left: 30px; */
 }
 #contact h3 {
   color: #fff;
@@ -570,14 +580,13 @@ label {
   font-family: "Open Sans", sans-serif;
   float: left;
 }
-#contact .form-control {
+/* #contact .form-control {
   display: block;
   width: 100%;
   padding: 10px 12px;
   font-size: 16px;
   height: 40px;
   line-height: 1.42857143;
-  /* color: #444; */
   color: #363030;
   background-color: transparent;
   background-image: none;
@@ -588,14 +597,14 @@ label {
   -webkit-transition: none;
   -o-transition: none;
   transition: none;
-}
-#contact .form-control:focus {
+} */
+/* #contact .form-control:focus {
   background:#5ca9fb;
   outline: 0;
   color: #fff;
   -webkit-box-shadow: transparent;
   box-shadow: transparent;
-}
+} */
 .form-control::-webkit-input-placeholder {
   color: #777;
 }
@@ -644,9 +653,22 @@ label {
   background: #fff;
 }
 .contact-info{
-  background-color:#5ca9fb;
+  background-color:transparent;
+  box-shadow: 0px 0px 5px #f6f6f6;
+  border-radius: 5px;
   /* box-shadow: 5px 5px 5px #5ca9fb; */
-  padding:60px 20px;
+  padding:60px 30px;
+  position: relative;
+}
+.contact-info::after{
+  position: absolute;
+  content:'';
+  top:0px;
+  left:0px;
+  height: 100%;
+  width: 7px;
+  background-color:#f6f6f6;
+  border-radius: 5px;
 }
 /* Footer Section*/
 #footer {
@@ -671,8 +693,8 @@ label {
 }
 .signup-wrapper{
   /* padding:200px 0px 50px; */
-  /* background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%); */
-  background: #f6f6f6;
+  /* background: url(../img/cleaing-back-banner.jpg) center center no-repeat; */
+  background: #b2afaf;
   color:rgba(255, 255, 255, 0.75);
   height: 100vh;
   display: flex;
@@ -699,15 +721,16 @@ label {
   background-color: #5ca9fb!important;
   background-image: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%)!important;
 }
-.signup-btn{
+/* .signup-btn{
   background:#ff0000c4;
   color:#fff;
-}
+} */
 #get-in-touch-form-wrappper{
   /* box-shadow: 0px 0px 10px; */
   padding: 30px;
-  /* border-radius: 10px; */
+  border-radius: 10px 100px;
   background:#fff;
+  text-align: center;
   box-shadow: inset 0 -4px 0 0 #5c6ac4, inset -4px 0 0 0 rgb(92 106 196 / 0%), inset 4px 4px 0 0 rgb(92 106 196 / 0%), 0 5px 20px 0 rgb(69 79 89 / 20%);
 }
 .error{
@@ -812,15 +835,118 @@ label {
   width: 100%;
   height: 100%;
 }
-/* .modal-wrapper {
-  --bs-backdrop-zindex: 1050;
-  --bs-backdrop-bg: #000;
-  --bs-backdrop-opacity: 0.5;
+.form-control {
+  height: 44px!important;
+}
+.dialog-overlay {
   position: fixed;
-  top: 0;
+  z-index: 9999;
   left: 0;
-  z-index: var(--bs-backdrop-zindex);
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--bs-backdrop-bg);
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dialog-content {
+  position: absolute;
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 8px;
+  width: 400px;
+  /* height: 300px; */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.dialog-content::after{
+  position: absolute;
+  left: 0px;
+  bottom: -5px;
+  content: "";
+  width: 100%;
+  height: 10px;
+  background: green;
+  border-radius: 8px;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: red;
+}
+.dialog-button{
+  text-align: center;
+  padding:40px 0px 10px;
+}
+.dialog-button h3{
+  padding-bottom: 20px;
+  font-size: 20px;
+  line-height: 40px;
+  /* color:#1e7a46; */
+}
+.success-check{
+  position: absolute;
+  top:-15px;
+  left:50%;
+}
+.success-check svg{
+  font-size: 40px;
+   color:#1e7a46;
+}
+.sl-spinner2 .sl-loader{
+  size: auto!important;
+  transform: none!important;
+}
+.feature-item{
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.5s;
+  box-shadow: 0px 0px 5px;
+  height: 320px;
+  margin-bottom: 20px;
+}
+.feature-item:hover{
+  box-shadow:0px 7px 5px #5ca9fb ;
+  transform: translateY(-10px);
+}
+.services-item{
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  border-radius: 10px;
+}
+.services-item::before{
+  position: absolute;
+  content:"";
+  width:100%;
+  height:0%;
+  left:0px;
+  top:0px;
+  background:#f6f6f6;
+  transition: 0.7s;
+  z-index: -1;
+  border-radius: 10px;
+
+}
+/* .services-item:hover{
+ 
 } */
+.services-item:hover::before{
+  height: 100%;
+}
+.services-item:hover h3{
+  color:#333!important;
+}
+.services-item:hover p{
+  color:#333!important;
+}

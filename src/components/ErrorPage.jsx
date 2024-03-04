@@ -8,7 +8,7 @@ function ErrorPage() {
       <div className="container">
         <div className="error-content-wrapper">
           <div className="erorr-img-wrapper">
-            <img src="/img/404-img-min.gif" alt="Error" loading="lazy"/>
+            <img src="/img/404-img-min.gif" alt="Error" loading="lazy" />
           </div>
           <h1>Oops!</h1>
           <b>404- PAGE NOT FOUND</b>
