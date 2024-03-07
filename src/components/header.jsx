@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 export const Header = (props) => {
   // const user = localStorage.getItem("firstname");
+
   return (
     <header id="header">
       <div className="intro">
@@ -10,17 +12,18 @@ export const Header = (props) => {
           <div className="container">
             <div className="row intro-text">
               <div className="col-md-12" style={{ marginTop: "20px" }}>
+            
                 <div>
-                  <h1 style={{ textShadow: "0px 3px 3px #5ca9fb" }}>
+                  <h1 style={{ textShadow: "0px 2px 3px #5ca9fb" }}>
+                  <span>FREE</span>&nbsp;
                     {props.data ? props.data.title : "Loading"}
-                    <span></span>
                   </h1>
                   <p>{props.data ? props.data.paragraph : "Loading"}</p>
                   <Link
                     to="/signup"
                     className="btn btn-custom btn-lg page-scroll signup-btn"
                   >
-                    SignUp
+                   Free SignUp
                   </Link>
                 </div>
               </div>

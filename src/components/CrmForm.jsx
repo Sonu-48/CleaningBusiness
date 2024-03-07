@@ -1,21 +1,16 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { BaseUrl } from "../ApiEndpoint/api";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-
+import ReCAPTCHA from "react-google-recaptcha";
 
 const SignupSchema = Yup.object().shape({
-  cleaners: Yup.string()
-    .required("cleaners are required"),
-  bookingtype: Yup.string()
-    .required("booking type is required"),
-    bookingdate: Yup.string()
-    .required("booking date is required"),
-    duration: Yup.string()
-    .required("duration is required"),
-    start_time: Yup.string()
-    .required("start time is required"),
+  cleaners: Yup.string().required("cleaners are required"),
+  bookingtype: Yup.string().required("booking type is required"),
+  bookingdate: Yup.string().required("booking date is required"),
+  duration: Yup.string().required("duration is required"),
+  start_time: Yup.string().required("start time is required"),
 });
 
 function CrmForm() {
@@ -23,6 +18,8 @@ function CrmForm() {
   // const [bookingValue, setBookingValue] = useState();
   const [duration, setDuration] = useState();
   const [timeSlot, setTimeSlot] = useState();
+  const captchaRef = useRef(null);
+  const [capchaError, setCapchaError] = useState(false);
   //   const [pinCode, setPinCode] = useState("");
   //   const [availableCleaners, setAvailableCleaners] = useState([]);
   //   const [error, setError] = useState(false);
@@ -48,6 +45,13 @@ function CrmForm() {
 
   //   form handleSubmit function
   const handleSubmit = () => {
+    const token = captchaRef.current.getValue();
+    captchaRef.current.reset();
+    if (!token) {
+      setCapchaError("Captcha is required.");
+    } else {
+      setCapchaError(false);
+    }
   };
 
   // handlePinCode function
@@ -93,100 +97,99 @@ function CrmForm() {
   //     }
   //   };
   return (
-   <div className="booking-form-wrapper">
-    <div className="container" style={{maxWidth:'600px'}}>
-    <section className="crm-form">
-      <Formik
-        initialValues={{
-          cleaners: "",
-          bookingtype: "",
-          bookingdate: "",
-          duration:"",
-          start_time:"",
-        }}
-        validationSchema={SignupSchema}
-        onSubmit={handleSubmit}
-      >
-        {({ errors, touched,handleChange,handleBlur,values }) => (
-          <Form>
-            <div mt={2}>
-              <div className="form-group">
-                <label
-                  htmlFor="Booking Date"
-                  className="control-label lable-title"
-                >
-                  Required Cleaners
-                </label>
-                <select
-                  name="cleaners"
-                  value={values.cleaners}
-                  className="form-control required"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  error={Boolean(touched.cleaners && errors.cleaners)}
-                >
-                  <option value>test</option>
-                  <option value="test">test</option>
-                </select>
-                
-                <p className="help-block text-danger" error>
-                  {touched.cleaners && errors.cleaners}
-                </p>
-               
-              </div>
-              <div className="form-group">
-                <label
-                  htmlFor="how-often"
-                  className="control-label lable-title"
-                >
-                  How Often
-                </label>
-                <select
-                  className="form-control required"
-                  defaultValue="Booking Type"
-                  name="bookingtype"
-                  value={values.bookingtype}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  error={Boolean(touched.bookingtype && errors.bookingtype)}
-                  // value={bookingValue}
-                  // onChange={(e) => setBookingValue(e.target.value)}
-                >
-                  {bookingType &&
-                    bookingType.map((data) => (
-                      <option key={data.id} value={data.id}>
-                        {data.name_type}
-                      </option>
-                    ))}
-                </select>
+    <div className="booking-form-wrapper">
+      <div className="container" style={{ maxWidth: "600px" }}>
+        <section className="crm-form">
+          <Formik
+            initialValues={{
+              cleaners: "",
+              bookingtype: "",
+              bookingdate: "",
+              duration: "",
+              start_time: "",
+            }}
+            validationSchema={SignupSchema}
+            onSubmit={handleSubmit}
+          >
+            {({ errors, touched, handleChange, handleBlur, values }) => (
+              <Form>
+                <div mt={2}>
+                  <div className="form-group">
+                    <label
+                      htmlFor="Booking Date"
+                      className="control-label lable-title"
+                    >
+                      Required Cleaners
+                    </label>
+                    <select
+                      name="cleaners"
+                      value={values.cleaners}
+                      className="form-control required"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      error={Boolean(touched.cleaners && errors.cleaners)}
+                    >
+                      <option value>test</option>
+                      <option value="test">test</option>
+                    </select>
 
-                <p className="help-block text-danger" error>
-                  {touched.bookingtype && errors.bookingtype}
-                </p>
-              </div>
-              <div className="form-group">
-                <label
-                  htmlFor="Booking Date"
-                  className="control-label lable-title"
-                >
-                  Booking Date
-                </label>
-                <input
-                  type="date"
-                  name="bookingdate"
-                  value={values.bookingdate}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  placeholder="Enter Booking Date"
-                  className="form-control required"
-                  error={Boolean(touched.bookingdate && errors.bookingdate)}
-                />
                     <p className="help-block text-danger" error>
-                  {touched.bookingdate && errors.bookingdate}
-                </p>
-              </div>
+                      {touched.cleaners && errors.cleaners}
+                    </p>
+                  </div>
+                  <div className="form-group">
+                    <label
+                      htmlFor="how-often"
+                      className="control-label lable-title"
+                    >
+                      How Often
+                    </label>
+                    <select
+                      className="form-control required"
+                      defaultValue="Booking Type"
+                      name="bookingtype"
+                      value={values.bookingtype}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      error={Boolean(touched.bookingtype && errors.bookingtype)}
+                      // value={bookingValue}
+                      // onChange={(e) => setBookingValue(e.target.value)}
+                    >
+                      {bookingType &&
+                        bookingType.map((data) => (
+                          <option key={data.id} value={data.id}>
+                            {data.name_type}
+                          </option>
+                        ))}
+                    </select>
 
-              {/* <div mt={3} className="form-group">
+                    <p className="help-block text-danger" error>
+                      {touched.bookingtype && errors.bookingtype}
+                    </p>
+                  </div>
+                  <div className="form-group">
+                    <label
+                      htmlFor="Booking Date"
+                      className="control-label lable-title"
+                    >
+                      Booking Date
+                    </label>
+                    <input
+                      type="date"
+                      name="bookingdate"
+                      value={values.bookingdate}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      placeholder="Enter Booking Date"
+                      className="form-control required"
+                      error={Boolean(touched.bookingdate && errors.bookingdate)}
+                    />
+                    <p className="help-block text-danger" error>
+                      {touched.bookingdate && errors.bookingdate}
+                    </p>
+                  </div>
+
+                  {/* <div mt={3} className="form-group">
           <input
             className="required form-control"
             placeholder="Enter pincode"
@@ -200,72 +203,80 @@ function CrmForm() {
           </div>
         </div> */}
 
-              <div className="form-group">
-                <label
-                  htmlFor="Select Duration"
-                  className="control-label lable-title"
-                >
-                  Select Duration
-                </label>
-                <select
-                  name="duration"
-                  value={values.duration}
-                  className="form-control required"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  error={Boolean(touched.duration && errors.duration)}
-                >
-                  <option>Select Duration</option>
-                  {duration &&
-                    duration.map((duration) => (
-                      <option key={duration.id} value={duration.hours}>
-                        {duration.hours}
-                      </option>
-                    ))}
-                </select>
-                <p className="help-block text-danger" error>
-                  {touched.duration && errors.duration}
-                </p>
-              </div>
-              <div className="form-group">
-                <label
-                  htmlFor="Select Start Time"
-                  className="control-label lable-title"
-                >
-                  Select Start Time
-                </label>
-                <select
-                  name="start_time"
-                  value={values.start_time}
-                  className="form-control required"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  error={Boolean(touched.start_time && errors.start_time)}
-                >
-                  <option value>Select Start Time</option>
-                  {timeSlot &&
-                    timeSlot.map((timeslot) => (
-                      <option key={timeslot.id} value={timeslot.time_bw}>
-                        {timeslot.time_bw}
-                      </option>
-                    ))}
-                </select>
-                <p className="help-block text-danger" error>
-                  {touched.start_time && errors.start_time}
-                </p>
-              </div>
-              <div mt={3} align="center">
-                <button
-                  type="submit"
-                  className="btn btn-custom btn-lg page-scrol"
-                  // disabled={loading}
-                >
-                  Submit
-                </button>
-              </div>
-            </div>
+                  <div className="form-group">
+                    <label
+                      htmlFor="Select Duration"
+                      className="control-label lable-title"
+                    >
+                      Select Duration
+                    </label>
+                    <select
+                      name="duration"
+                      value={values.duration}
+                      className="form-control required"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      error={Boolean(touched.duration && errors.duration)}
+                    >
+                      <option>Select Duration</option>
+                      {duration &&
+                        duration.map((duration) => (
+                          <option key={duration.id} value={duration.hours}>
+                            {duration.hours}
+                          </option>
+                        ))}
+                    </select>
+                    <p className="help-block text-danger" error>
+                      {touched.duration && errors.duration}
+                    </p>
+                  </div>
+                  <div className="form-group">
+                    <label
+                      htmlFor="Select Start Time"
+                      className="control-label lable-title"
+                    >
+                      Select Start Time
+                    </label>
+                    <select
+                      name="start_time"
+                      value={values.start_time}
+                      className="form-control required"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      error={Boolean(touched.start_time && errors.start_time)}
+                    >
+                      <option value>Select Start Time</option>
+                      {timeSlot &&
+                        timeSlot.map((timeslot) => (
+                          <option key={timeslot.id} value={timeslot.time_bw}>
+                            {timeslot.time_bw}
+                          </option>
+                        ))}
+                    </select>
+                    <p className="help-block text-danger" error>
+                      {touched.start_time && errors.start_time}
+                    </p>
+                  </div>
+                  {/* ReCAPTCHA section */}
+                  <div>
+                    <ReCAPTCHA
+                      sitekey={process.env.REACT_APP_SITE_KEY}
+                      ref={captchaRef}
+                    />
+                    <p className="help-block text-danger">{capchaError}</p>
+                  </div>
+                  <div align="center" style={{ marginTop: "30px" }}>
+                    <button
+                      type="submit"
+                      className="btn btn-custom btn-lg page-scrol"
+                      // disabled={loading}
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
 
-            {/* <div mt={5}>
+                {/* <div mt={5}>
                 {availableCleaners &&
                    availableCleaners.map((availableCleaners) => (
                   <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -311,12 +322,12 @@ function CrmForm() {
             </div>
           ))}
       </div> */}
-          </Form>
-        )}
-      </Formik>
-    </section>
+              </Form>
+            )}
+          </Formik>
+        </section>
+      </div>
     </div>
-   </div>
   );
 }
 export default CrmForm;

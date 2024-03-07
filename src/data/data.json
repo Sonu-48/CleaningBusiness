@@ -1,10 +1,10 @@
 {
   "Header": {
-    "title":"Business Cleaning Software For Cleaners",
+    "title":"CRM For Cleaning Business",
     "paragraph": "Streamline your appointment scheduling process with a comprehensive booking software, saving valuable time previously spent on phone and email coordination. Accept online bookings around the clock, automate payments, manage your business, handle marketing tasks, and more!."
   },
   "About": {
-    "paragraph": "Introducing Business Cleaning, a software solution tailored for cleaning companies and startups like yours to efficiently manage their operations. Our platform centralizes data, streamlines operations, and elevates overall business management. Let Business Cleaning be the catalyst for optimizing your cleaning company's success!.",
+    "paragraph": "Introducing Cleaning Business, a software solution tailored for cleaning companies and startups like yours to efficiently manage their operations. Our platform centralizes data, streamlines operations, and elevates overall business management. Let Cleaning Business be the catalyst for optimizing your cleaning company's success!.",
     "Why": [
       "quality and productivity ",
       "clean and healthy environment",
@@ -35,7 +35,7 @@
     {
       "icon": "fa fa-book",
       "name": "Online Booking System",
-      "text": "Remove friction from your booking process by minimizing the communication gap with your customers. Your Appointy’s online booking page will allow them to view real-time availability for services so that they can pick a time of their own convenience easily."
+      "text": "Remove friction from your booking process by minimizing the communication gap with your customers. Your cleaning business online booking page will allow them to view real-time availability for services so that they can pick a time of their own convenience easily."
     },
     {
       "icon": "fa fa-calendar",
@@ -60,29 +60,25 @@
     {
       "icon": "fa fa-mobile",
       "name": "Appointment Booking App",
-      "text": "With Appointy’s Android & iOS mobile app you can carry your entire business in your pocket. Manage scheduling, payments, staff calendars, appointments, etc. via the app. Add appointments to your calendar even when you’re out for lunch. No laptop? No problem."
+      "text": "With cleaning business Android & iOS mobile app you can carry your entire business in your pocket. Manage scheduling, payments, staff calendars, appointments, etc. via the app. Add appointments to your calendar even when you’re out for lunch. No laptop? No problem."
     }
   ],
   "Testimonials": [
     {
-      "img": "img/testimonials/01.jpg",
-      "text": "I recently utilized Business Cleaning for house cleaning services in Mohali, and I must say, I'm thoroughly impressed. The team displayed competence, punctuality, and meticulous attention to detail. Their careful work left my house feeling revitalized and spotless. Thank you!.",
-      "name": "Prince Mehra"
+      "text": "I was delighted with the service I received. The staff was pleasant, and the work was excellently executed. I definitely plan to utilize their services again. Recommending them by using their service again is the highest form of praise.",
+      "name": "Mary Alice Peoples"
     },
     {
-      "img": "img/testimonials/02.jpg",
-      "text": "Business Cleaning Service is undoubtedly the premier home cleaning company in Mohali. Their exceptional service and delightful team members provide mind-blowing experiences. A heartfelt thank you to Business Cleaning Service!",
-      "name": "Dhavan Kumar"
+      "text": "The cleaning quality is exceptional, and their reliability is commendable. Maintaining a morning appointment is crucial for me, and they consistently honor that commitment. I have complete confidence in the security of my home during their visits. While Cleaning Business may not be the most affordable option, the superior service and peace of mind they provide justify any additional expense.",
+      "name": "Louise M."
     },
     {
-      "img": "img/testimonials/03.jpg",
-      "text": "We are immensely grateful to Business Cleaning for ensuring a seamless shifting process. Our heartfelt thanks for assigning Ritesh Raj to clean our house.",
-      "name": "Shivam Goswami"
+      "text": "Cleaning Business, cleaned my office for the first time. They arrived punctually and performed an outstanding job. I will certainly have them return in the future.",
+      "name": "Susan L."
     }
   ],
   "Team": [
     {
-      "img": "img/team/01.jpg",
       "name": "John Doe",
       "job": "Director"
     },

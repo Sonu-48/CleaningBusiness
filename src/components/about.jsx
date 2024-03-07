@@ -40,7 +40,7 @@ export const About = (props) => {
         </div>
         <div style={{textAlign:'center',marginTop:'50px'}}>
           <Link to="/signup" className="btn btn-custom btn-lg page-scroll signup-btn">
-            SignUp
+            Free SignUp
           </Link>
         </div>
       </div>

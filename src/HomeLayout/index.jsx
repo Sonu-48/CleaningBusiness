@@ -7,6 +7,7 @@ import { Gallery } from "../components/gallery";
 import { Testimonials } from "../components/testimonials";
 import { Contact } from "../components/contact";
 import JsonData from '../data/data.json';
+import Rating from "../components/Rating/Rating";
 
 const Homelayout = () => {
     const [landingPageData, setLandingPageData] = useState({});
@@ -17,6 +18,7 @@ const Homelayout = () => {
     <div>
       <Header data={landingPageData.Header} />
       <Features data={landingPageData.Features} />
+      <Rating/>
       <About data={landingPageData.About} />
       <Services data={landingPageData.Services} />
       <Gallery data={landingPageData.Gallery} />
